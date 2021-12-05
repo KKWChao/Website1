@@ -10,11 +10,32 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-p {
+p, .card-1-title, .card-4-text {
     text-shadow: 1px 1px 4px black;
 }
 
-img, .li-p-2, .card-1-button {
+img, .li-p-2 {
+    box-shadow: 1px 1px 50px black;
+}
+
+button {
+    background-color: #A29F15;
+    border-radius: 1em;
+    padding: 1em 2em;
+    color: #510D0A;
+    border: 1px solid black;
+    font-weight: bold;
+    transition: ease 0.3s;
+}
+
+button:hover {
+    background-color: #709255;
+    box-shadow: 0px 0px 20px black;
+}
+
+button:active {
+    color: #20360e;
+    background-color: #757412;
     box-shadow: 0px 0px 50px black;
 }
 
@@ -33,7 +54,7 @@ img, .li-p-2, .card-1-button {
 
 /* general padding for items */
 
-.card-1, .card-2, .card-3, .group-2 {
+.card-1, .card-2, .card-3 {
     padding: 1em;
 }
 
@@ -104,7 +125,7 @@ body, .header, .card-1, .card-2, .card-3, .card-4, .group-1, .group-2,
 .nav-links {
     color: #A29F15;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
     border: 1px solid inherit;
     padding: 0.5em;
     border-radius: 1em;
@@ -142,6 +163,7 @@ ul {
     align-items: flex-start;
     max-width: 30%;;
     flex-direction: column;
+    padding-left: 1em;
 }
 
 .card-1-title {
@@ -181,27 +203,6 @@ ul {
 
 }
 
-.card-1-button {
-    background-color: #A29F15;
-    border-radius: 1em;
-    padding: 1em 2em;
-    color: #510D0A;
-    border: 1px solid black;
-    font-weight: bold;
-    transition: ease 0.2s;
-    
-}
-
-.card-1-button:hover {
-    background-color: #709255;
-}
-
-.card-1-button:active {
-    color: #20360e;
-    background-color: #A29F15;
-}
-
-
 
 /* Second Card Item */
 
@@ -214,6 +215,7 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 2em;
+    padding: 1em;
 
 }
 
@@ -272,6 +274,7 @@ ul {
 }
 
 .quote {
+    padding-top: 1em;
     justify-content: center;
     align-items: center;
     font-size: 24px;
@@ -294,11 +297,32 @@ ul {
     text-shadow: 0px 0px 0px black;
 }
 
+/* Fourth Card Item */
+
 .card-4 {
     background-color: #A29F15;
     flex: 1 1 0;
     padding: 2em 2em 4em 2em;
+    justify-content: space-evenly;
+    color: #A29F15;
 }
+
+.card-4-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #510D0A;
+    border-radius: 1em;
+    padding: 2em;
+    gap: 1em;
+    width: 70%;
+}
+
+.card-4-item span {
+    font-size: x-large;
+    font-weight: bold;
+}
+
 
 
 /* ------Footer------ */
