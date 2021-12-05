@@ -14,9 +14,8 @@ p {
     text-shadow: 1px 1px 4px black;
 }
 
-img, .li-p-2 {
+img, .li-p-2, .card-1-button {
     box-shadow: 0px 0px 50px black;
-    border-radius: 30%;
 }
 
 /* Main Page */
@@ -35,13 +34,13 @@ img, .li-p-2 {
 /* general padding for items */
 
 .card-1, .card-2, .card-3, .group-2 {
-    padding: 2em;
+    padding: 1em;
 }
 
 /* flexbox items */
 
-body, .header, .card-1, .card-2, .card-3, .group-1, .group-2, 
-.top-nav, .card-group, .li-p-2, .quote, .by-quote, .footer,
+body, .header, .card-1, .card-2, .card-3, .card-4, .group-1, .group-2, 
+.top-nav, .card-group, .quote, .by-quote, .footer,
 .card-1-title, .card-1-stuff {
     display: flex;
 }
@@ -64,7 +63,7 @@ body, .header, .card-1, .card-2, .card-3, .group-1, .group-2,
 
 /* Main Text Colors */
 
-.disclaimers, .quote, .card-1-text {
+.disclaimers, .quote, .card-1-text, .card-1-text-subtext {
     color: #BBD8B3;
 }
 
@@ -78,6 +77,7 @@ body, .header, .card-1, .card-2, .card-3, .group-1, .group-2,
 
 .header {
     justify-content: space-between;
+    color: #A29F15;
 }
 
 .top-nav {
@@ -97,27 +97,27 @@ body, .header, .card-1, .card-2, .card-3, .group-1, .group-2,
 }
 
 .logo-effect:hover {
-    color: #A29F15;
+    color: #709255;
+    font-size: 2em;
 }
 
 .nav-links {
+    color: #A29F15;
     text-decoration: none;
-    color: black;
     transition: 0.5s;
     border: 1px solid inherit;
     padding: 0.5em;
     border-radius: 1em;
+    font-weight: bold;
 }
 
 .nav-links:hover {
-    color: #A29F15;
-    border: 5px solid #A29F15;
+    color: #709255;
+    border: 5px solid #709255;
     border-radius: 1em;
-
 }
 
-
-
+/* right nav items */
 
 /* ------LIST ITEMS------ */
 
@@ -140,7 +140,6 @@ ul {
 .group-1 {
     justify-content: center;
     align-items: flex-start;
-    gap: 1em;
     max-width: 30%;;
     flex-direction: column;
 }
@@ -150,16 +149,16 @@ ul {
     justify-content: center;
     font-weight: bold;
     font-size: xx-large;
-    border: 5px solid #F3B61F;
+    border: 5px solid #A29F15;
     color: #A29F15;
     padding: 1em;
     border-radius: 1em;
+    margin: 0;
 }
 
 .card-1-stuff {
     flex-direction: row;
     justify-content: center;
-    gap: 1em;
 }
 
 .cardling {
@@ -173,12 +172,40 @@ ul {
 
 .card-1-text {
     font-size: 20px;
+    margin-bottom: 0.5em;
 }
+
+.card-1-text-subtext {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.card-1-button {
+    background-color: #A29F15;
+    border-radius: 1em;
+    padding: 1em 2em;
+    color: #510D0A;
+    border: 1px solid black;
+    font-weight: bold;
+    transition: ease 0.2s;
+    
+}
+
+.card-1-button:hover {
+    background-color: #709255;
+}
+
+.card-1-button:active {
+    color: #20360e;
+    background-color: #A29F15;
+}
+
+
 
 /* Second Card Item */
 
 .card-2 {
-    flex-grow: 2 1 0;
     justify-content: space-evenly;
     align-content: center;
 }
@@ -191,31 +218,55 @@ ul {
 }
 
 .li-p-2 {
+    position: relative;
     width: 100px;
     height: 100px;
-    padding: 1em;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    transition: ease 0.5s;
+    border-radius: 50%;
 }
+
+.hover-cap {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 40%;
+    visibility: hidden;
+    color: #510D0A;
+}
+
+.li-p-2:hover .hover-cap {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+}
+
 
 /* Transition cards */
 
 .li-p-2:hover {
-    border-bottom: 0px;
-    color: black;
+    height: 200px;
+    width: 200px;
+    transition: ease 0.5s;
+    border-radius: 25%;
+    box-shadow: 0px 0px 75px white;
+}
+
+.li-p-2:hover .card-2-img{
+   opacity: 0.3;
 }
 
 .card-2-img {
-    width: 20em;
-    height: auto;
-
+    width: 100%;
+    height: 100%;
 }
+
 
 /* Third Card Item */
 
 .card-3 {
-
     justify-content: space-evenly;
     align-content: center;
 }
@@ -243,7 +294,11 @@ ul {
     text-shadow: 0px 0px 0px black;
 }
 
-
+.card-4 {
+    background-color: #A29F15;
+    flex: 1 1 0;
+    padding: 2em 2em 4em 2em;
+}
 
 
 /* ------Footer------ */
@@ -253,12 +308,19 @@ ul {
 
 .footer {
     margin: 0%;
-    height: 2em;
+    height: 0.25em;
     padding: 1em;
     position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
+    transition: ease 0.3s;
+}
+
+/* footer hover */
+
+.footer:hover {
+    height: 3em;
 }
 
 .disclaimers {
